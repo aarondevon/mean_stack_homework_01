@@ -3,27 +3,32 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>MEAN Stack</title>
-
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/stylesheet.css">
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="/vendor/angular/angular.min.js" type="text/javascript"></script>
     <script src="/assets/scripts/app.min.js" type="text/javascript"></script>
 </head>
 <body>
-    <div>
-        <h1>MEAN STACK API</h1>
+    <div class="group container">
+        <div class="jumbotron other-jumbo">
+            <h1 class="text-center">MEAN STACK API</h1>
+        </div>
+        <div ng-controller="IndexController" class="form">
+            <p class="ptext" ng-show="cat.name">Your new cats name is: {{cat.name}}</p>
+            <p class="ptext" ng-hide="cat.name">Enter your new cat's name!</p>
+            <form nonvalidate>
+                <div class="ptext">Name: <input type="text" ng-model="cat.name" /> </div><br />
+                <input class="btn btn-default" type="submit" ng-click="add(cat)" value="Save" />
+            </form>
+            <div><h4 class="ptext">Cats</h4>
+                <ul>
+                    <li ng-repeat="cat in cats">{{cat.name}}</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div ng-controller="IndexController">
-        <p ng-show="cat.name">Your new cats name is: {{cat.name}}</p>
-        <p ng-hide="cat.name">Enter your new cat's name!</p>
-        <form nonvalidate>
-            Name: <input type="text" ng-model="cat.name" /> <br />
-            <input type="submit" ng-click="add(cat)" value="Save" />
-        </form>
-        <h4>Cats</h4>
-        <ul>
-            <li ng-repeat="cat in cats">{{cat.name}}</li>
-        </ul>
-    </div>
-
 
 </body>
 </html>

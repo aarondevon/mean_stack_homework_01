@@ -20,13 +20,19 @@ module.exports = function(grunt) {
                     "angular/angular.min.js.map",
                     "angular/angular-csp.css",
                     "bootstrap/dist/css/bootstrap.css.map",
-                    "bootstrap/dist/css/boostrap.min.css",
+                    "bootstrap/dist/css/bootstrap.min.css",
                     "bootstrap/dist/js/bootstrap.min.js",
                     "jquery/dist/jquery.min.js",
                     "jquery/dist/jquery.min.map"
 
                 ],
                 "dest": "server/public/vendor/"
+            },
+            css: {
+                expand: true,
+                cwd: "client/",
+                src: "stylesheet.css",
+                "dest": "server/public/assets/css"
             }
         }
     });
